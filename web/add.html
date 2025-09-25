@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/new.css">
+    <title>Add New</title>
+</head>
+
+<body>
+    <form enctype="multipart/form-data" action="/api/add" method="POST">
+        <div>
+            <span>Title</span>
+            <input type="text" name="name" placeholder="Title..." required style="width: 90%;">
+        </div>
+        <div>
+            <span>Author</span>
+            <input type="text" name="author" placeholder="Author..." required style="width: 70%;">
+        </div>
+        <div>
+            <span>Series<span style="font-style: italic; font-size: 0.7em;"> (optional)</span></span>
+            <input type="text" name="series" placeholder="Series name..." style="width: 70%;">
+        </div>
+        <div><span>ISBN<span style="font-style: italic; font-size: 0.7em;"> (optional)</span></span>
+            <input type="text" name="isbn" placeholder="ISBN...">
+        </div>
+        <div>
+            <span>Mp3 source file</span>
+            <input type="file" name="myFile" accept=".mp3" placeholder="Mp3 file" required>
+        </div>
+        <button type="submit">Upload</button>
+    </form>
+
+</body>
+
+</html>

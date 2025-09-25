@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/library.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=cog,headphones,home,logout,menu,search" />
+    <script src="/static/js/index.js" defer></script>
+</head>
+
+<body>
+    <nav class="sidebar" id="navbar">
+        <ul>
+            <h2>Bookbank</h2>
+            <a href="/">
+                <li class="nav-item"><span class="material-symbols-rounded">
+                        home
+                    </span><span>Home</span></li>
+            </a>
+            <a href="/library">
+                <li class="nav-item"><span class="material-symbols-rounded">
+                        headphones
+                    </span><span>My Library</span></li>
+            </a>
+            <a href="#">
+                <li class="nav-item"><span class="material-symbols-rounded">
+                        search
+                    </span><span>Search</span></li>
+            </a>
+            <div style="height: 1px;background: var(--overlay0); margin: 1rem 0;"></div>
+            <li class="nav-item"><span>good night</span></li>
+            <li class="nav-item"><span>Logout</span></li>
+        </ul>
+    </nav>
+    <main>
+        <div>
+            <h1>My Library...</h1>
+            <div style="height: 1px;background: var(--overlay0); margin: 1rem 0;"></div>
+            <div class="cards-grid">
+                {{range .}}
+                <div class="card">
+                    <img src="{{.CoverUrl}}" alt="" class="cover">
+                    <p>{{.Name}}.</p>
+                    <p style="color: var(--overlay1);">{{.Author}}</p>
+                </div>
+                {{end}}
+            </div>
+        </div>
+        <footer>
+            <a href="https://github.com/alwaysnur/bookbank" target="_blank" rel="noopener noreferrer">Bookbank</a>
+            instance. Made with &lt;3, by <a href="http://github.com/alwaysnur" target="_blank"
+                rel="noopener noreferrer">AlwaysNur</a>.
+        </footer>
+
+    </main>
+    <div id="mask-overlay" style="display:none;"></div>
+    <div id="menu-open-btn" onclick="doNavbar()"><span class="material-symbols-rounded">menu</span></div>
+
+
+</body>
+
+</html>

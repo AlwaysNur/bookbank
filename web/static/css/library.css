@@ -1,0 +1,14 @@
+nav span:not(.material-symbols-rounded) {
+    margin-left: 5px;
+}
+
+.cover {
+    max-height: 150px;
+    object-fit: contain;
+    object-position: 50% 50%;
+    background: var(--surface0);
+}
+
+h1 {
+    font-size: x-large;
+}
