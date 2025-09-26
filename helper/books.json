@@ -1,20 +1,3 @@
 {
-    "books": [
-        {
-            "name": "Five Fall Into Adventure",
-            "author": "Enid Blyton",
-            "series": "The Famous Five",
-            "file": "1.mp3",
-            "isbn": "978-0340681145",
-            "coverUrl": "http://books.google.com/books/content?id=IQJgmgEACAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=1\u0026source=gbs_api"
-        },
-        {
-            "name": "Northen Lights",
-            "author": "Philp Pullman",
-            "series": "His Dark Materials ",
-            "file": "2.mp3",
-            "isbn": "0-590-54178-1",
-            "coverUrl": "http://books.google.com/books/content?id=zjRQAAAAYAAJ\u0026printsec=frontcover\u0026img=1\u0026zoom=1\u0026source=gbs_api"
-        }
-    ]
+    "books": []
 }
