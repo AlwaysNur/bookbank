@@ -32,3 +32,5 @@ go.work.sum
 .vscode/
 
 store/**
+
+helper/books.json
