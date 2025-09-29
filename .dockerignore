@@ -2,4 +2,6 @@ helper/books.json
 helper/counter
 
 store/**
-.github/**
+**/.github/**
+
+**/assets/**2
