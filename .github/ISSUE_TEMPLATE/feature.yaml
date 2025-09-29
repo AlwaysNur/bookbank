@@ -1,0 +1,19 @@
+name: Feature request
+description: Request a new feature!
+body:
+    - type: checkboxes
+      attributes:
+          label: Does this feature exist yet?
+          description: Please check if this is not already a feature.
+          options:
+              - label: I have check and this feature does not exist yet.
+                required: true
+    - type: textarea
+      attributes:
+          label: Describe your feature.
+          description: Tell us in full detail, what do you want added?
+          placeholder: Support themes, place a theme in ~/bookbank/themes and color the web ui as the theme defines.
+      validations:
+          required: true
+
+# yaml-language-server: $schema=https://json.schemastore.org/github-issue-forms.json
