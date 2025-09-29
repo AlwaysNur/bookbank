@@ -1,0 +1,41 @@
+name: Report Bug
+description: Report a bug with bookbank!
+body:
+    - type: checkboxes
+      attributes:
+          label: Is there an existing issue outlining your problem?
+          description: Please search to see if an issue already exists for your problem.
+          options:
+              - label: I am using the latest bookbank version.
+                required: true
+              - label: I have searched the existing issues and they do not solve my problem.
+                required: true
+    - type: textarea
+      attributes:
+          label: Describe your problem.
+          description: Also tell us, what do you expect to see?
+          placeholder: The library page appears blank...
+      validations:
+          required: true
+    - type: textarea
+      attributes:
+          label: Attach screenshots.
+          description: If applicable, attach screenshots that clearly highlight the issue.
+    - type: input
+      attributes:
+          label: What browser(s) are you seeing the problem on?
+          description: "Make sure to include the browser version."
+          placeholder: Firefox v112.0.2
+      validations:
+          required: true
+    - type: textarea
+      attributes:
+          label: Program logs.
+          description: "Paste in the program logs - can be found by running 'docker logs bookbank'"
+          placeholder: "2025/09/28 03:39:00 Serving from:  /app/store\n2025/09/28 03:41:00 Error in json file: books.json could not be found"
+
+    - type: textarea
+      attributes:
+          label: Any additional comments?
+          description: Add any information that hasn't been covered in the previous sections!
+# yaml-language-server: $schema=https://json.schemastore.org/github-issue-forms.json
