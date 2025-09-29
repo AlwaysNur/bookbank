@@ -1,29 +1,16 @@
-body * {
-    color: var(--text);
-}
-
 body {
     background-color: var(--base);
+    color: var(--text);
 }
 
-button,
 input {
-    color: var(--text);
     background-color: var(--crust);
 }
 
+/* file upload button active state */
 input[type="file"]::file-selector-button:hover,
 button:hover {
-    background-color: var(--surface1);
-    outline: none;
-    border: none;
-}
-
-/* file upload button active state */
-input[type="file"]::file-selector-button:active,
-button:active {
-    background-color: var(--base);
-    border: none;
+    filter: brightness(90%);
 }
 
 input[type="file"]::file-selector-button,
@@ -32,12 +19,16 @@ button {
     outline: none;
     padding: 10px;
     border-radius: 5px;
-    background-color: var(--surface0);
-    color: var(--text);
+    color: var(--base);
+    background-color: var(--green);
 }
 
 form {
     background-color: var(--mantle);
+}
+
+.nav-item {
+    color: var(--text);
 }
 
 @media (prefers-color-scheme: light) {
