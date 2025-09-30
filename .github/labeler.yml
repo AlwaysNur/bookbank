@@ -1,0 +1,17 @@
+feature:
+ - head-branch: ['^feat']
+
+chore:
+ - head-branch: ['^chore']
+
+web:
+ - changed-files:
+  - any-glob-to-any-file: web/**
+
+backend:
+ - changed-files:
+  - any-glob-to-any-file: ['helper/**', 'src/**']
+
+documentation:
+  - changed-files:
+   - any-glob-to-any-file: ['README.md', 'docs/**']
