@@ -10,8 +10,11 @@ import (
 	"github.com/tidwall/gjson"
 )
 
-func GetCoverUrlByIsbn(isbn13 string) string {
-	resp, err := http.Get(fmt.Sprintf("https://www.googleapis.com/books/v1/volumes?q=isbn:%v", strings.ReplaceAll(isbn13, "-", "")))
+func GetCoverUrlByIsbn(isbn string) string {
+	if isbn == "" {
+		return "/static/image/placeholder.png"
+	}
+	resp, err := http.Get(fmt.Sprintf("https://www.googleapis.com/books/v1/volumes?q=isbn:%v", strings.ReplaceAll(isbn, "-", "")))
 	if err != nil {
 		log.Println("Error sending GET request")
 	}
