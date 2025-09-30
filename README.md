@@ -10,15 +10,17 @@
 
 ### Install
 
-With Docker CLI:
+#### With Docker CLI:
 
-Create necessary files and folders
+- Create necessary files and folders:
 
 ```bash
 mkdir -p bookbank bookbank/internal bookbank/internal/files
 echo "{\"books\": []}" > bookbank/internal/books.json
 echo "0" > bookbank/internal/counter
 ```
+
+- Run the image:
 
 ```bash
 docker run --publish 8080:8080 \
