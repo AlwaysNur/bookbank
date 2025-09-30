@@ -71,7 +71,7 @@ func HandleListenPage(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "error converting counter to int", http.StatusInternalServerError)
 		return
 	}
-	name, author, series, filepath, isbn, coverUrl := books.GetBook(num)
+	name, author, series, filepath, isbn, coverUrl, _ := books.GetBook(num)
 
 	tmpl, err := template.ParseFiles("web/listen.html")
 	if err != nil {

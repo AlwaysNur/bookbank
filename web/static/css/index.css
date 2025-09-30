@@ -76,6 +76,7 @@ div.card {
     width: 100%;
     height: 100%;
     font-size: 12pt;
+    color: var(--text);
 
     & p {
         margin: 10px;

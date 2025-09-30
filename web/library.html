@@ -43,11 +43,13 @@
             <div style="height: 1px;background: var(--overlay0); margin: 1rem 0;"></div>
             <div class="cards-grid">
                 {{range .}}
-                <div class="card">
-                    <img src="{{.CoverUrl}}" alt="" class="cover">
-                    <p>{{.Name}}.</p>
-                    <p style="color: var(--overlay1);">{{.Author}}</p>
-                </div>
+                <a href="/listen?id={{ .Id }}" target="_blank" rel="noopener noreferrer">
+                    <div class="card">
+                        <img src="{{.CoverUrl}}" alt="" class="cover">
+                        <p>{{.Name}}.</p>
+                        <p style="color: var(--overlay1);">{{.Author}}</p>
+                    </div>
+                </a>
                 {{end}}
             </div>
         </div>

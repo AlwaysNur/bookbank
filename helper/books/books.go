@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 
 	isbnlib "github.com/alwaysnur/bookbank/helper/isbn"
 	"github.com/tidwall/gjson"
@@ -17,6 +18,7 @@ type JsonBook struct {
 	File     string `json:"file"`
 	Isbn     string `json:"isbn"`
 	CoverUrl string `json:"coverUrl"`
+	Id       string `json:"id"`
 }
 
 type BooksData struct {
@@ -29,6 +31,7 @@ type Book struct {
 	File     string
 	Isbn     string
 	CoverUrl string
+	Id       string
 }
 
 func check(err any) {
@@ -47,6 +50,7 @@ func AddEntry(name string, author string, series string, filename string, isbn s
 		File:     filename,
 		Isbn:     isbn,
 		CoverUrl: isbnlib.GetCoverUrlByIsbn(isbn),
+		Id:       strings.ReplaceAll(filename, ".mp3", ""),
 	}
 	// read JSON file
 	filePath := "helper/books.json"
@@ -77,7 +81,7 @@ func AddEntry(name string, author string, series string, filename string, isbn s
 	log.Println("created book entry")
 }
 
-func GetBook(entry int) (string, string, string, string, string, string) {
+func GetBook(entry int) (string, string, string, string, string, string, string) {
 	filePath := "helper/books.json"
 	file, err := os.ReadFile(filePath)
 	check(err)
@@ -88,8 +92,9 @@ func GetBook(entry int) (string, string, string, string, string, string) {
 		filepath string = gjson.Get(string(file), fmt.Sprintf("books.%v.file", entry-1)).String()
 		isbn     string = gjson.Get(string(file), fmt.Sprintf("books.%v.isbn", entry-1)).String()
 		coverUrl string = gjson.Get(string(file), fmt.Sprintf("books.%v.coverUrl", entry-1)).String()
+		id       string = gjson.Get(string(file), fmt.Sprintf("books.%v.id", entry-1)).String()
 	)
-	return name, author, series, filepath, isbn, coverUrl
+	return name, author, series, filepath, isbn, coverUrl, id
 }
 
 func GetBooks(filename string) ([]JsonBook, error) {
