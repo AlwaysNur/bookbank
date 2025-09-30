@@ -4,6 +4,9 @@ feature:
 chore:
   - head-branch: ["^chore"]
 
+bug fix:
+  - head-branch: ["^fix"]
+
 web:
   - changed-files:
     - any-glob-to-any-file: web/**
@@ -15,4 +18,5 @@ backend:
 documentation:
   - changed-files:
     - any-glob-to-any-file: ["README.md", "docs/**"]
+
 
