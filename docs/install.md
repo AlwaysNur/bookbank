@@ -2,11 +2,11 @@
 
 #### This guide teaches you how to install Bookbank and get it running for the first time.
 
+---
 ### Ways to install
 
 - [VIA docker cli](#install-with-docker-cli)
 - [VIA docker compose](#install-with-docker-compose)
-
 ---
 
 #### Pre install:
