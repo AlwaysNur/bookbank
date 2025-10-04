@@ -23,9 +23,9 @@ echo "0" > bookbank/internal/counter
 - Run the image:
 
 ```bash
-docker run --publish 8080:8080 \
+docker run --publish 8080:8080 --restart unless-stopped \
 -v $(pwd)/bookbank/internal/books.json:/app/helper/books.json \
 -v $(pwd)/bookbank/internal/counter:/app/helper/counter \
 -v $(pwd)/bookbank/internal/files:/app/store \
-alwaysnur/bookbank
+--name bookbank alwaysnur/bookbank
 ```
