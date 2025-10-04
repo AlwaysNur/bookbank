@@ -1,0 +1,11 @@
+name: bookbank-server
+services:
+    bookbank:
+        ports:
+            - 8080:8080
+        restart: unless-stopped
+        volumes:
+            - ~/bookbank/internal/books.json:/app/helper/books.json
+            - ~/bookbank/internal/counter:/app/helper/counter
+            - ~/bookbank/internal/files:/app/store
+        image: alwaysnur/bookbank
