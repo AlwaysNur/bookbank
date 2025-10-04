@@ -1,5 +1,6 @@
 name: Report Bug
 description: Report a bug with bookbank!
+labels: [bug]
 body:
     - type: checkboxes
       attributes:
