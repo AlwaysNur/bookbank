@@ -1,5 +1,6 @@
 name: Feature request
 description: Request a new feature!
+labels: [feature, enhancement]
 body:
     - type: checkboxes
       attributes:
