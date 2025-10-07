@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"strconv"
+	"strings"
 
 	"github.com/alwaysnur/bookbank/helper/books"
 	isbnHelper "github.com/alwaysnur/bookbank/helper/isbn"
@@ -18,6 +19,7 @@ type listenData struct {
 	File        string
 	Isbn        string
 	CoverUrl    string
+	Id          string
 	Description string
 }
 type indexData struct {
@@ -70,17 +72,17 @@ func HandleListenPage(w http.ResponseWriter, r *http.Request) {
 	id := queryParams.Get("id")
 	num, err := strconv.Atoi(id)
 	if err != nil {
-		http.Error(w, "error converting counter to int", http.StatusInternalServerError)
+		http.Error(w, "Error converting counter to int", http.StatusInternalServerError)
 		return
 	}
-	name, author, series, filepath, isbn, coverUrl, _ := books.GetBook(num)
+	name, author, series, filename, isbn, coverUrl, _ := books.GetBook(num)
 
 	tmpl, err := template.ParseFiles("web/listen.html")
 	if err != nil {
 		log.Println("Error parsing html")
 		return
 	}
-	filepath = fmt.Sprintf("/file/%v", filepath)
+	filepath := fmt.Sprintf("/file/%v", filename)
 	data := listenData{
 		Name:        name,
 		Author:      author,
@@ -88,6 +90,7 @@ func HandleListenPage(w http.ResponseWriter, r *http.Request) {
 		File:        filepath,
 		Isbn:        isbn,
 		CoverUrl:    coverUrl,
+		Id:          strings.ReplaceAll(filename, ".mp3", ""),
 		Description: isbnHelper.GetDescriptionByIsbn(isbn),
 	}
 	tmpl.Execute(w, data)

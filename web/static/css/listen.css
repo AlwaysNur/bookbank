@@ -1,0 +1,36 @@
+#content {
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#content img {
+    height: 200px;
+    display: block;
+}
+
+#title {
+    font-size: 11.5pt;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 11.3;
+}
+
+.description {
+    background-color: var(--surface0);
+    border-radius: 5px;
+    margin: 15px 0;
+    padding: 7px;
+}
+
+audio {
+    width: 80%;
+    background-color: var(--base);
+}
