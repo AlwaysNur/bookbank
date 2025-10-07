@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/AlwaysNur/bookbank/compare/v1.0.0...v1.0.1) (2025-10-07)
+
+
+### Bug Fixes
+
+* **listen-page:** better error handling ([#41](https://github.com/AlwaysNur/bookbank/issues/41)) ([f45e648](https://github.com/AlwaysNur/bookbank/commit/f45e648638b56f9fffe583f43f9855062235428c))
+
 ## 1.0.0 (2025-10-07)
 
 
