@@ -33,12 +33,20 @@ docker run --publish 8080:8080 --restart unless-stopped \
 --name bookbank alwaysnur/bookbank
 ```
 
+- Open \<your ip\>:8080 in a browser
+
+- Your Bookbank instance is now running!
+
 ---
 
 #### Install with Docker Compose
 
 - Create a `compose.yaml` file and copy the contents of the
   [compose file provided](./examples/compose.yaml) into it.
-- Then run `docker compose up`.
+- Then run `docker compose up`
+
+- Open \<your ip\>:8080 in a browser
+
+- Your Bookbank instance is now running!
 
 ---
