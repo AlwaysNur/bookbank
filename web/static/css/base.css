@@ -1,6 +1,7 @@
 body {
     background-color: var(--base);
     color: var(--text);
+    font-size: 11pt;
 }
 
 input {
@@ -30,6 +31,10 @@ form {
 .nav-item {
     color: var(--text);
 }
+
+/* catppuccin-latte, catppuccin-mocha.
+Thanks to Catppuccin (catppuccin.com) <3.
+*/
 
 @media (prefers-color-scheme: light) {
     :root {

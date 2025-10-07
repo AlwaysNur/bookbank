@@ -1,6 +1,8 @@
-const audio = document.querySelector('audio'); // Get your audio element
-
+const audio = document.querySelector('audio'); // <audio>
+const descElement = document.querySelector(".description")
 const savedPosition = localStorage.getItem(`bookbankPlaybackLocation-${id}`);
+
+descElement.innerHTML = descElement.innerHTML.replaceAll(".", ".<br>").replaceAll("!", "!<br>")
 
 if (savedPosition) {
     audio.currentTime = parseFloat(savedPosition);

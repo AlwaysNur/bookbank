@@ -25,6 +25,7 @@ func GetCoverUrlByIsbn(isbn string) string {
 	}
 	coverImage := gjson.Get(string(body), "items.0.volumeInfo.imageLinks.thumbnail").String()
 	if coverImage == "" {
+		log.Println("An unknowen error occurred")
 		return "/static/image/placeholder.png"
 	}
 	return coverImage
