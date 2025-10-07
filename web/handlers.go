@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-	"strings"
 
 	"github.com/alwaysnur/bookbank/helper/books"
 	isbnHelper "github.com/alwaysnur/bookbank/helper/isbn"
@@ -58,13 +57,12 @@ func HandleLibrary(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := tmpl.Execute(w, booksArray); err != nil {
-		http.Error(w, "Failed to render template", http.StatusInternalServerError)
+		http.Error(w, "Failed to render template (library-page)", http.StatusInternalServerError)
 		log.Printf("Error executing template: %v", err)
 	}
 }
 
 func HandleListenPage(w http.ResponseWriter, r *http.Request) {
-
 	u := r.URL
 
 	queryParams := u.Query()
@@ -75,10 +73,17 @@ func HandleListenPage(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Error converting counter to int", http.StatusInternalServerError)
 		return
 	}
-	name, author, series, filename, isbn, coverUrl, _ := books.GetBook(num)
+	name, author, series, filename, isbn, coverUrl, bkId := books.GetBook(num)
+
+	if name == "" && author == "" && series == "" && filename == "" && isbn == "" && coverUrl == "" && bkId == "" {
+		http.Error(w, "Book does not exist", http.StatusNotFound)
+		log.Println("Book does not exist")
+		return
+	}
 
 	tmpl, err := template.ParseFiles("web/listen.html")
 	if err != nil {
+		http.Error(w, "Failed to render template (listen-page)", http.StatusInternalServerError)
 		log.Println("Error parsing html")
 		return
 	}
@@ -90,7 +95,7 @@ func HandleListenPage(w http.ResponseWriter, r *http.Request) {
 		File:        filepath,
 		Isbn:        isbn,
 		CoverUrl:    coverUrl,
-		Id:          strings.ReplaceAll(filename, ".mp3", ""),
+		Id:          bkId,
 		Description: isbnHelper.GetDescriptionByIsbn(isbn),
 	}
 	tmpl.Execute(w, data)
