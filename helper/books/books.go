@@ -78,7 +78,7 @@ func AddEntry(name string, author string, series string, filename string, isbn s
 		panic(err)
 	}
 
-	log.Println("created book entry")
+	log.Println("Created new book entry.\nTitle: " + name)
 }
 
 func GetBook(entry int) (string, string, string, string, string, string, string) {
