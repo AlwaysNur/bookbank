@@ -9,16 +9,18 @@ import (
 	"strings"
 
 	"github.com/alwaysnur/bookbank/helper/books"
+	isbnHelper "github.com/alwaysnur/bookbank/helper/isbn"
 )
 
 type listenData struct {
-	Name     string
-	Author   string
-	Series   string
-	File     string
-	Isbn     string
-	CoverUrl string
-	Id       string
+	Name        string
+	Author      string
+	Series      string
+	File        string
+	Isbn        string
+	CoverUrl    string
+	Id          string
+	Description string
 }
 type indexData struct {
 	Name              string
@@ -82,13 +84,14 @@ func HandleListenPage(w http.ResponseWriter, r *http.Request) {
 	}
 	filepath := fmt.Sprintf("/file/%v", filename)
 	data := listenData{
-		Name:     name,
-		Author:   author,
-		Series:   series,
-		File:     filepath,
-		Isbn:     isbn,
-		CoverUrl: coverUrl,
-		Id:       strings.ReplaceAll(filename, ".mp3", ""),
+		Name:        name,
+		Author:      author,
+		Series:      series,
+		File:        filepath,
+		Isbn:        isbn,
+		CoverUrl:    coverUrl,
+		Id:          strings.ReplaceAll(filename, ".mp3", ""),
+		Description: isbnHelper.GetDescriptionByIsbn(isbn),
 	}
 	tmpl.Execute(w, data)
 }
