@@ -28,7 +28,7 @@ func GetCoverUrlByIsbn(isbn string) string {
 		log.Println("An unknowen error occurred")
 		return "/static/image/placeholder.png"
 	}
-	return coverImag
+	return coverImage
 }
 
 func GetDescriptionByIsbn(isbn string) string {

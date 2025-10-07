@@ -6,6 +6,7 @@
 ### 🎧 Features
 
 - Easy to use interface
+- Saves where you are
 - Free forever
 
 ### Install
@@ -15,17 +16,23 @@
 - Create necessary files and folders:
 
 ```bash
-mkdir -p bookbank bookbank/internal bookbank/internal/files
-echo "{\"books\": []}" > bookbank/internal/books.json
-echo "0" > bookbank/internal/counter
+$ mkdir -p bookbank bookbank/internal bookbank/internal/files && echo "{\"books\": []}" > bookbank/internal/books.json && echo "0" > bookbank/internal/counter
 ```
 
 - Run the image:
 
 ```bash
-docker run --publish 8080:8080 --restart unless-stopped \
+$ docker run -d --publish 8080:8080 --restart unless-stopped \
 -v $(pwd)/bookbank/internal/books.json:/app/helper/books.json \
 -v $(pwd)/bookbank/internal/counter:/app/helper/counter \
 -v $(pwd)/bookbank/internal/files:/app/store \
 --name bookbank alwaysnur/bookbank
 ```
+
+- Open \<IP-ADDRESS\>:8080 in a browser.
+
+#### For more ways to install see the [install guide](./docs/install.md).
+
+### Development
+
+Please see [contributing.md](./contributing.md)
