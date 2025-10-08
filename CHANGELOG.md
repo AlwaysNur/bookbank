@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.4](https://github.com/AlwaysNur/bookbank/compare/v1.0.3...v1.0.4) (2025-10-08)
+
+
+### Bug Fixes
+
+* revert update release-please.yaml ([#45](https://github.com/AlwaysNur/bookbank/issues/45))" ([#47](https://github.com/AlwaysNur/bookbank/issues/47)) ([fb83358](https://github.com/AlwaysNur/bookbank/commit/fb83358a21f3c79a54cd6332c97602b49bd175ed))
+* update docker.yaml ([#49](https://github.com/AlwaysNur/bookbank/issues/49)) ([f6a57fa](https://github.com/AlwaysNur/bookbank/commit/f6a57faa2d8d137354dde799b1c6cce1089dceca))
+
 ## [1.0.3](https://github.com/AlwaysNur/bookbank/compare/v1.0.2...v1.0.3) (2025-10-08)
 
 
