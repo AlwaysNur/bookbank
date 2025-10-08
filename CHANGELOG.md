@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/AlwaysNur/bookbank/compare/v1.0.2...v1.0.3) (2025-10-08)
+
+
+### Bug Fixes
+
+* update release-please.yaml ([#45](https://github.com/AlwaysNur/bookbank/issues/45)) ([f53a078](https://github.com/AlwaysNur/bookbank/commit/f53a0789ec061f57719ed3176dcdc795fd060ab3))
+
 ## [1.0.2](https://github.com/AlwaysNur/bookbank/compare/v1.0.1...v1.0.2) (2025-10-08)
 
 
