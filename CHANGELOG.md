@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/AlwaysNur/bookbank/compare/v1.0.1...v1.0.2) (2025-10-08)
+
+
+### Bug Fixes
+
+* **docker-ci:** run on release created ([#43](https://github.com/AlwaysNur/bookbank/issues/43)) ([6c01ef3](https://github.com/AlwaysNur/bookbank/commit/6c01ef39208ce624ebf2f120d4d773c645bd89d5))
+
 ## [1.0.1](https://github.com/AlwaysNur/bookbank/compare/v1.0.0...v1.0.1) (2025-10-07)
 
 
