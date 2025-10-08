@@ -1,8 +1,11 @@
 name: Docker build push
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
+    paths:
+      - 'CHANGELOG.md'
 
 jobs:
   build:
