@@ -18,8 +18,9 @@ func main() {
 	log.Println("Serving from: ", absPath)
 
 	http.Handle("/file/", http.StripPrefix("/file/", http.FileServer(http.Dir(absPath))))
-
+	// api routes
 	http.HandleFunc("/api/add", upload.UploadHandler)
+	http.HandleFunc("/api/version", web.HandleVersion)
 	// static html routes
 	http.HandleFunc("/new", web.HandleAdd)
 	http.HandleFunc("/listen", web.HandleListenPage)
