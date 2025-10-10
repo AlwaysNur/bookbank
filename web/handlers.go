@@ -29,6 +29,9 @@ type indexData struct {
 func HandleAdd(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, "web/add.html")
 }
+func HandleVersion(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "version.txt")
+}
 func HandleIndex(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles("web/index.html")
 	if err != nil {
@@ -42,7 +45,6 @@ func HandleIndex(w http.ResponseWriter, r *http.Request) {
 	}
 	tmpl.Execute(w, data)
 }
-
 func HandleLibrary(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles("web/library.html")
 	if err != nil {
@@ -61,7 +63,6 @@ func HandleLibrary(w http.ResponseWriter, r *http.Request) {
 		log.Printf("Error executing template: %v", err)
 	}
 }
-
 func HandleListenPage(w http.ResponseWriter, r *http.Request) {
 	u := r.URL
 

@@ -28,3 +28,11 @@ async function doNavbar() {
 // Prevent event bubbling from navbar and menu button to overlay
 // navbar.addEventListener("click", function (e) { e.stopPropagation(); });
 // if (menuBtn) menuBtn.addEventListener("click", function (e) { e.stopPropagation(); });
+
+async function version() {
+    const response = await fetch("/api/version");
+    const data = await response.text();
+    document.getElementById("version").innerHTML = "V" + data;
+    document.getElementById("version").innerHTML = document.getElementById("version").innerHTML.replace(" ", "").replace("\n", "");
+}
+version()

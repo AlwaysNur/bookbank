@@ -4,8 +4,20 @@ body {
     font-size: 11pt;
 }
 
+footer {
+    a.footer-link {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    a.footer-link:first-child {
+        margin-left: 0px;
+    }
+}
+
 input {
     background-color: var(--crust);
+    color: var(--text);
 }
 
 /* file upload button active state */
