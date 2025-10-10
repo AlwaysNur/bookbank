@@ -64,7 +64,7 @@ main {
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, 210px);
-    margin-bottom: 20px;
+    margin-bottom: 150px;
     gap: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -208,17 +208,19 @@ nav span:not(.material-symbols-rounded) {
         padding-bottom: 0;
     }
 
-    footer {
-        position: static;
-        left: 0;
-        bottom: 0;
-        z-index: auto;
-    }
+
 }
 
 /* ----small phone---- */
 @media screen and (max-width: 600px) {
     .cards-grid {
         justify-content: center;
+    }
+
+    footer {
+        width: auto;
+        left: 0;
+        bottom: 0;
+        z-index: auto;
     }
 }
