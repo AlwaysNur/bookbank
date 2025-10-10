@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/AlwaysNur/bookbank/compare/v1.0.4...v1.1.0) (2025-10-10)
+
+
+### Features
+
+* show version in footer ([#50](https://github.com/AlwaysNur/bookbank/issues/50)) ([3e8e4fe](https://github.com/AlwaysNur/bookbank/commit/3e8e4fe7785c2ab9c5b17ec8c0ba33fb550212e3))
+
 ## [1.0.4](https://github.com/AlwaysNur/bookbank/compare/v1.0.3...v1.0.4) (2025-10-08)
 
 
