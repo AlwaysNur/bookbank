@@ -3,7 +3,6 @@ package upload
 import (
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -11,6 +10,7 @@ import (
 	"strings"
 
 	"github.com/alwaysnur/bookbank/helper/books"
+	"github.com/alwaysnur/bookbank/helper/log"
 )
 
 func UploadHandler(w http.ResponseWriter, r *http.Request) {
@@ -19,12 +19,14 @@ func UploadHandler(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseMultipartForm(10 << 20) // 10 MB
 	if err != nil {
 		http.Error(w, "Error parsing form", http.StatusBadRequest)
+		log.Error("Error parsing form")
 		return
 	}
 
 	file, _, err := r.FormFile("myFile")
 	if err != nil {
 		http.Error(w, "Error retrieving the file", http.StatusBadRequest)
+		log.Error("Error retrieving the file")
 		return
 	}
 	defer file.Close()
@@ -45,6 +47,7 @@ func UploadHandler(w http.ResponseWriter, r *http.Request) {
 		num, err = strconv.Atoi(counterStr)
 		if err != nil {
 			http.Error(w, "Error converting counter to int", http.StatusInternalServerError)
+			log.Fatal("Error converting counter to int")
 			return
 		}
 	}
@@ -54,28 +57,32 @@ func UploadHandler(w http.ResponseWriter, r *http.Request) {
 	dst, err := createFile(fileName)
 	if err != nil {
 		http.Error(w, "Error creating file", http.StatusInternalServerError)
+		log.Error("Error creating counter file")
 		return
 	}
 
 	fileBytes, err := io.ReadAll(file)
 	if err != nil {
-		http.Error(w, "Invalid", http.StatusInternalServerError)
+		http.Error(w, "Invalid", http.StatusBadRequest)
+		log.Error("Invalid or corrupted file")
 		return
 	}
 
 	if !isValidFileType(fileBytes) {
-		http.Error(w, "Invalid File Type", http.StatusInternalServerError)
+		http.Error(w, "Invalid file type", http.StatusInternalServerError)
+		log.Error("Invalid file type")
 		return
 	}
 
 	if _, err := dst.Write(fileBytes); err != nil {
 		http.Error(w, "Error saving the file", http.StatusInternalServerError)
+		log.Error("Error saving file")
 		return
 	}
 	books.AddEntry(name, author, series, fileName, isbn) // add a new json entry
 	err = os.WriteFile(counterPath, []byte(fmt.Sprint(nextNum)), 0644)
 	if err != nil {
-		log.Println("Failed to update counter")
+		log.Error("Failed to update counter")
 		return
 	}
 	http.Redirect(w, r, "/", http.StatusFound)

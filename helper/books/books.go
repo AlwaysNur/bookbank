@@ -3,11 +3,11 @@ package books
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 	"os"
 	"strings"
 
 	isbnlib "github.com/alwaysnur/bookbank/helper/isbn"
+	"github.com/alwaysnur/bookbank/helper/log"
 	"github.com/tidwall/gjson"
 )
 
@@ -36,7 +36,7 @@ type Book struct {
 
 func check(err any) {
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 }
 
@@ -78,7 +78,7 @@ func AddEntry(name string, author string, series string, filename string, isbn s
 		panic(err)
 	}
 
-	log.Println("Created new book entry.\nTitle: " + name)
+	log.Info("Created new book entry " + name)
 }
 
 func GetBook(entry int) (string, string, string, string, string, string, string) {
