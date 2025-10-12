@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.1.0](https://github.com/AlwaysNur/bookbank/compare/v1.0.4...v1.1.0) (2025-10-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* use standard log lib ([#55](https://github.com/AlwaysNur/bookbank/issues/55))
+
+### Features
+
+* show version in footer ([#50](https://github.com/AlwaysNur/bookbank/issues/50)) ([3e8e4fe](https://github.com/AlwaysNur/bookbank/commit/3e8e4fe7785c2ab9c5b17ec8c0ba33fb550212e3))
+* standard log lib ([8549d20](https://github.com/AlwaysNur/bookbank/commit/8549d20affe6b54accce3531d1aa406980f7811b))
+* standard log library ([#54](https://github.com/AlwaysNur/bookbank/issues/54)) ([8549d20](https://github.com/AlwaysNur/bookbank/commit/8549d20affe6b54accce3531d1aa406980f7811b))
+* use standard log lib ([#55](https://github.com/AlwaysNur/bookbank/issues/55)) ([5d99b5d](https://github.com/AlwaysNur/bookbank/commit/5d99b5de828e0431e8f5ee905a0ebfdbcb7a6461))
+
+
+### Miscellaneous Chores
+
+* release 1.1.0 ([510f170](https://github.com/AlwaysNur/bookbank/commit/510f170d0aa26bc34f83b270483ba1277b76433c))
+
 ## [1.0.4](https://github.com/AlwaysNur/bookbank/compare/v1.0.3...v1.0.4) (2025-10-08)
 
 
