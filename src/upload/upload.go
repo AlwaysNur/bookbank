@@ -23,7 +23,7 @@ func UploadHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	file, _, err := r.FormFile("myFile")
+	file, header, err := r.FormFile("myFile")
 	if err != nil {
 		http.Error(w, "Error retrieving the file", http.StatusBadRequest)
 		log.Error("Error retrieving the file")
@@ -68,9 +68,9 @@ func UploadHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if !isValidFileType(fileBytes) {
+	if !isValidFileType(fileBytes) && !strings.HasSuffix(header.Filename, ".mp3") {
 		http.Error(w, "Invalid file type", http.StatusInternalServerError)
-		log.Error("Invalid file type")
+		log.Error(fmt.Sprintf("Invalid file type: '%s'", http.DetectContentType(fileBytes)))
 		return
 	}
 
@@ -85,7 +85,7 @@ func UploadHandler(w http.ResponseWriter, r *http.Request) {
 		log.Error("Failed to update counter")
 		return
 	}
-	http.Redirect(w, r, "/", http.StatusFound)
+	http.Redirect(w, r, "/listen?id="+fmt.Sprint(nextNum), http.StatusFound)
 }
 
 func createFile(filename string) (*os.File, error) {
