@@ -41,6 +41,19 @@ nav.sidebar>ul {
     border-radius: 5px;
     display: flex;
     align-items: center;
+    transition: ease-in-out 250ms all;
+}
+
+.nav-item:hover {
+    filter: brightness(0.95);
+}
+
+a:hover {
+    color: var(--overlay0);
+}
+
+a {
+    transition: color 150ms ease-in-out;
 }
 
 span.material-symbols-rounded {
