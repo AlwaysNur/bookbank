@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/AlwaysNur/bookbank/compare/v1.1.0...v1.2.0) (2025-10-14)
+
+
+### Features
+
+* animations ([#58](https://github.com/AlwaysNur/bookbank/issues/58)) ([2f703ab](https://github.com/AlwaysNur/bookbank/commit/2f703ab1585892814071693412cf1c62b2871ebe))
+
+
+### Bug Fixes
+
+* invalid file type ([#60](https://github.com/AlwaysNur/bookbank/issues/60)) ([603947e](https://github.com/AlwaysNur/bookbank/commit/603947ebb8788de83d3a931be1f7d13273de7cab))
+
 ## [1.1.0](https://github.com/AlwaysNur/bookbank/compare/v1.0.4...v1.1.0) (2025-10-12)
 
 
