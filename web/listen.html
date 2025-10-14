@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/static/css/listen.css">
     <script src="/static/js/listen.js" defer></script>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=cog,headphones,home,logout,menu,search" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=cog,headphones,home,logout,menu,search,upload" />
     <script src="/static/js/index.js" defer></script>
     <script>
         const id = document.getElementById("id").content;
@@ -25,17 +25,26 @@
             <a href="/">
                 <li class="nav-item"><span class="material-symbols-rounded">
                         home
-                    </span><span>Home</span></li>
+                    </span><span>Home</span>
+                </li>
             </a>
             <a href="/library">
                 <li class="nav-item"><span class="material-symbols-rounded">
                         headphones
-                    </span><span>My Library</span></li>
+                    </span><span>My Library</span>
+                </li>
             </a>
             <a href="#">
                 <li class="nav-item"><span class="material-symbols-rounded">
                         search
-                    </span><span>Search</span></li>
+                    </span><span>Search</span>
+                </li>
+            </a>
+            <a href="/new">
+                <li class="nav-item"><span class="material-symbols-rounded">
+                        upload
+                    </span><span>Upload Book</span>
+                </li>
             </a>
             <div style="height: 1px;background: var(--overlay0); margin: 1rem 0;"></div>
             <li class="nav-item"><span>good night</span></li>

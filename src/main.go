@@ -1,10 +1,10 @@
 package main
 
 import (
-	"log"
 	"net/http"
 	"path/filepath"
 
+	"github.com/alwaysnur/bookbank/helper/log"
 	"github.com/alwaysnur/bookbank/src/upload"
 	"github.com/alwaysnur/bookbank/web"
 )
@@ -13,10 +13,9 @@ func main() {
 
 	absPath, err := filepath.Abs("./store")
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal(err.Error())
 	}
-	log.Println("Serving from: ", absPath)
-
+	log.Info("Serving routes")
 	http.Handle("/file/", http.StripPrefix("/file/", http.FileServer(http.Dir(absPath))))
 	// api routes
 	http.HandleFunc("/api/add", upload.UploadHandler)
@@ -28,6 +27,5 @@ func main() {
 	http.HandleFunc("/library", web.HandleLibrary)
 	// file servers
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("web/static"))))
-
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
