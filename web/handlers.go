@@ -3,12 +3,12 @@ package web
 import (
 	"fmt"
 	"html/template"
-	"log"
 	"net/http"
 	"strconv"
 
 	"github.com/alwaysnur/bookbank/helper/books"
 	isbnHelper "github.com/alwaysnur/bookbank/helper/isbn"
+	"github.com/alwaysnur/bookbank/helper/log"
 )
 
 type listenData struct {
@@ -36,7 +36,7 @@ func HandleIndex(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles("web/index.html")
 	if err != nil {
 		http.Error(w, "Failed to parse template", http.StatusInternalServerError)
-		log.Printf("Error parsing template: %v", err)
+		log.Error(fmt.Sprintf("Error parsing template: %v", err))
 	}
 
 	data := indexData{
@@ -49,18 +49,18 @@ func HandleLibrary(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles("web/library.html")
 	if err != nil {
 		http.Error(w, "Failed to parse template", http.StatusInternalServerError)
-		log.Printf("Error parsing template: %v", err)
+		log.Error(fmt.Sprintf("Error parsing template: %v", err))
 	}
 
 	booksArray, err := books.GetBooks("helper/books.json")
 	if err != nil {
-		log.Printf("Error in json file: %v", err)
+		log.Error(fmt.Sprintf("Error in json file: %v", err))
 		return
 	}
 
 	if err := tmpl.Execute(w, booksArray); err != nil {
 		http.Error(w, "Failed to render template (library-page)", http.StatusInternalServerError)
-		log.Printf("Error executing template: %v", err)
+		log.Error(fmt.Sprintf("Error executing template: %v", err))
 	}
 }
 func HandleListenPage(w http.ResponseWriter, r *http.Request) {
@@ -72,20 +72,21 @@ func HandleListenPage(w http.ResponseWriter, r *http.Request) {
 	num, err := strconv.Atoi(id)
 	if err != nil {
 		http.Error(w, "Error converting counter to int", http.StatusInternalServerError)
+		log.Error("Error converting counter to int")
 		return
 	}
 	name, author, series, filename, isbn, coverUrl, bkId := books.GetBook(num)
 
 	if name == "" && author == "" && series == "" && filename == "" && isbn == "" && coverUrl == "" && bkId == "" {
 		http.Error(w, "Book does not exist", http.StatusNotFound)
-		log.Println("Book does not exist")
+		log.Error("Book does not exist")
 		return
 	}
 
 	tmpl, err := template.ParseFiles("web/listen.html")
 	if err != nil {
 		http.Error(w, "Failed to render template (listen-page)", http.StatusInternalServerError)
-		log.Println("Error parsing html")
+		log.Error(fmt.Sprintf("Error parsing html (%v)", r.URL))
 		return
 	}
 	filepath := fmt.Sprintf("/file/%v", filename)
