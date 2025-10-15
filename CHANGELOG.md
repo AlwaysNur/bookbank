@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/AlwaysNur/bookbank/compare/v1.2.0...v1.2.1) (2025-10-15)
+
+
+### Bug Fixes
+
+* **upload.go:** set max memory to 32 megabytes ([#61](https://github.com/AlwaysNur/bookbank/issues/61)) ([dbce78c](https://github.com/AlwaysNur/bookbank/commit/dbce78cf65c372d72600c75c79690d853e698f01))
+
 ## [1.2.0](https://github.com/AlwaysNur/bookbank/compare/v1.1.0...v1.2.0) (2025-10-14)
 
 
