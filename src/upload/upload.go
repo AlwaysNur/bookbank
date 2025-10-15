@@ -16,7 +16,7 @@ import (
 func UploadHandler(w http.ResponseWriter, r *http.Request) {
 	r.Body = http.MaxBytesReader(w, r.Body, 10<<30)
 
-	err := r.ParseMultipartForm(10 << 20) // 10 MB
+	err := r.ParseMultipartForm(32 << 20) // 32 MB
 	if err != nil {
 		http.Error(w, "Error parsing form", http.StatusBadRequest)
 		log.Error("Error parsing form")
