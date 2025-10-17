@@ -14,6 +14,12 @@ import (
 )
 
 func UploadHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		log.Error("Method not allowed")
+		return
+	}
+
 	r.Body = http.MaxBytesReader(w, r.Body, 10<<30)
 
 	err := r.ParseMultipartForm(32 << 20) // 32 MB
