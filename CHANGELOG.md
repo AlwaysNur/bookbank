@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/AlwaysNur/bookbank/compare/v1.2.1...v1.3.0) (2025-10-17)
+
+
+### Features
+
+* **upload.go:** allow only http post ([#63](https://github.com/AlwaysNur/bookbank/issues/63)) ([6c95866](https://github.com/AlwaysNur/bookbank/commit/6c95866b5f84fcd86e94fc063f45b523016e2bfe))
+
 ## [1.2.1](https://github.com/AlwaysNur/bookbank/compare/v1.2.0...v1.2.1) (2025-10-15)
 
 
