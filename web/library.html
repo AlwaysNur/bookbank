@@ -49,7 +49,7 @@
             <div style="height: 1px;background: var(--overlay0); margin: 1rem 0;"></div>
             <div class="cards-grid">
                 {{range .}}
-                <a href="/listen?id={{ .Id }}" target="_blank" rel="noopener noreferrer">
+                <a href="/listen?id={{ .Id }}" target="_blank" rel="noopener noreferrer" style="display: {{ .Deleted }};">
                     <div class="card">
                         <img src="{{.CoverUrl}}" alt="" class="cover">
                         <p>{{.Name}}.</p>
