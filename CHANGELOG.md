@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/AlwaysNur/bookbank/compare/v1.3.0...v1.4.0) (2025-10-21)
+
+
+### Features
+
+* use inter font ([#67](https://github.com/AlwaysNur/bookbank/issues/67)) ([d974f8a](https://github.com/AlwaysNur/bookbank/commit/d974f8a686ad828502bb0a45e889c88fa63d1cb3))
+
+
+### Bug Fixes
+
+* **mobile, desktop:** fix overflows ([#69](https://github.com/AlwaysNur/bookbank/issues/69)) ([b8f2e53](https://github.com/AlwaysNur/bookbank/commit/b8f2e53f011fb2fc37a65cbd454cdc4889ee0995))
+
 ## [1.3.0](https://github.com/AlwaysNur/bookbank/compare/v1.2.1...v1.3.0) (2025-10-17)
 
 
