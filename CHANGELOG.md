@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/AlwaysNur/bookbank/compare/v1.4.0...v1.4.1) (2025-10-27)
+
+
+### Bug Fixes
+
+* **mobile:** calculate padding in width ([#70](https://github.com/AlwaysNur/bookbank/issues/70)) ([aa4fbee](https://github.com/AlwaysNur/bookbank/commit/aa4fbee657bb6d7e68e74128c5ffa940f2fd04dc))
+
 ## [1.4.0](https://github.com/AlwaysNur/bookbank/compare/v1.3.0...v1.4.0) (2025-10-21)
 
 
