@@ -108,7 +108,7 @@ div.card {
 
 footer {
     background-color: var(--crust);
-    width: 100%;
+    width: calc(100vw - 10px - 10px);
     padding: 10px;
     margin: 0;
     left: 0;
