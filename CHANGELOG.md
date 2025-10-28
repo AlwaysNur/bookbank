@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/AlwaysNur/bookbank/compare/v1.4.1...v1.5.0) (2025-10-28)
+
+
+### Features
+
+* release ([#73](https://github.com/AlwaysNur/bookbank/issues/73)) ([288bfb2](https://github.com/AlwaysNur/bookbank/commit/288bfb2dfea5e9e4c5bf49e3cb850daf9a5313b9))
+
 ## [1.4.1](https://github.com/AlwaysNur/bookbank/compare/v1.4.0...v1.4.1) (2025-10-27)
 
 
