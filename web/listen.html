@@ -66,7 +66,7 @@
                 <h1 id="title">{{.Series}}: {{.Name}}</h1>
                 <h2 style="color: var(--overlay0); margin-top: 0;">By {{.Author}}.</h2>
             </hgroup>
-            <audio src="{{.File}}" controls></audio>
+            <audio src="{{.File}}" controls preload="metadata"></audio>
             <p class="description">{{.Description}}</p>
         </div>
         <footer>
