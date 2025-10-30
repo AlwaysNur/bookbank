@@ -34,3 +34,5 @@ go.work.sum
 store/**
 
 helper/books.json
+**/__pycache__
+**/.venv

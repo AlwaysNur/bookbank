@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bookbank"
+version = "1.0.0"
+description = "Bookbank: The audiobook and podcast media server solution. Python API package."
+authors = [
+    {name = "AlwaysNur", email = "171459295+AlwaysNur@users.noreply.github.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.6"
+dependencies = [
+    "requests"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/alwaysnur/bookbank/api/python"
