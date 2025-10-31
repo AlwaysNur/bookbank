@@ -1,5 +1,57 @@
 # Changelog
 
+## [1.5.0](https://github.com/AlwaysNur/bookbank/compare/v1.4.1...v1.5.0) (2025-10-28)
+
+
+### Features
+
+* release ([#73](https://github.com/AlwaysNur/bookbank/issues/73)) ([288bfb2](https://github.com/AlwaysNur/bookbank/commit/288bfb2dfea5e9e4c5bf49e3cb850daf9a5313b9))
+
+## [1.4.1](https://github.com/AlwaysNur/bookbank/compare/v1.4.0...v1.4.1) (2025-10-27)
+
+
+### Bug Fixes
+
+* **mobile:** calculate padding in width ([#70](https://github.com/AlwaysNur/bookbank/issues/70)) ([aa4fbee](https://github.com/AlwaysNur/bookbank/commit/aa4fbee657bb6d7e68e74128c5ffa940f2fd04dc))
+
+## [1.4.0](https://github.com/AlwaysNur/bookbank/compare/v1.3.0...v1.4.0) (2025-10-21)
+
+
+### Features
+
+* use inter font ([#67](https://github.com/AlwaysNur/bookbank/issues/67)) ([d974f8a](https://github.com/AlwaysNur/bookbank/commit/d974f8a686ad828502bb0a45e889c88fa63d1cb3))
+
+
+### Bug Fixes
+
+* **mobile, desktop:** fix overflows ([#69](https://github.com/AlwaysNur/bookbank/issues/69)) ([b8f2e53](https://github.com/AlwaysNur/bookbank/commit/b8f2e53f011fb2fc37a65cbd454cdc4889ee0995))
+
+## [1.3.0](https://github.com/AlwaysNur/bookbank/compare/v1.2.1...v1.3.0) (2025-10-17)
+
+
+### Features
+
+* **upload.go:** allow only http post ([#63](https://github.com/AlwaysNur/bookbank/issues/63)) ([6c95866](https://github.com/AlwaysNur/bookbank/commit/6c95866b5f84fcd86e94fc063f45b523016e2bfe))
+
+## [1.2.1](https://github.com/AlwaysNur/bookbank/compare/v1.2.0...v1.2.1) (2025-10-15)
+
+
+### Bug Fixes
+
+* **upload.go:** set max memory to 32 megabytes ([#61](https://github.com/AlwaysNur/bookbank/issues/61)) ([dbce78c](https://github.com/AlwaysNur/bookbank/commit/dbce78cf65c372d72600c75c79690d853e698f01))
+
+## [1.2.0](https://github.com/AlwaysNur/bookbank/compare/v1.1.0...v1.2.0) (2025-10-14)
+
+
+### Features
+
+* animations ([#58](https://github.com/AlwaysNur/bookbank/issues/58)) ([2f703ab](https://github.com/AlwaysNur/bookbank/commit/2f703ab1585892814071693412cf1c62b2871ebe))
+
+
+### Bug Fixes
+
+* invalid file type ([#60](https://github.com/AlwaysNur/bookbank/issues/60)) ([603947e](https://github.com/AlwaysNur/bookbank/commit/603947ebb8788de83d3a931be1f7d13273de7cab))
+
 ## [1.1.0](https://github.com/AlwaysNur/bookbank/compare/v1.0.4...v1.1.0) (2025-10-12)
 
 
