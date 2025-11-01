@@ -93,7 +93,31 @@ func UploadHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	http.Redirect(w, r, "/listen?id="+fmt.Sprint(nextNum), http.StatusFound)
 }
+func DeleteHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodDelete {
+		http.Error(w, "Method not allowed: "+r.Method, http.StatusMethodNotAllowed)
+		log.Error("Method not allowed: " + r.Method)
+		return
+	}
+	idStr := r.URL.Path[len("/api/delete/"):]
+	id, err := strconv.Atoi(idStr)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Invalid book ID: %v", id), http.StatusBadRequest)
+		log.Error(fmt.Sprintf("Invalid book ID: %v", id))
+		return
+	}
 
+	if !bookExists(id) {
+		http.Error(w, fmt.Sprintf("Book does not exist: %v", id), http.StatusInternalServerError)
+		log.Error(fmt.Sprintf("Book does not exist: %v", id))
+		return
+	}
+
+	fmt.Fprintf(w, "Deleting of book: %d\n", id)
+	books.DeleteBook(id - 1)
+	os.Remove(fmt.Sprintf("store/%v.mp3", id))
+	fmt.Fprint(w, "Deleted Successfully!")
+}
 func createFile(filename string) (*os.File, error) {
 	if _, err := os.Stat("store"); os.IsNotExist(err) {
 		os.Mkdir("store", 0755)
@@ -108,4 +132,14 @@ func createFile(filename string) (*os.File, error) {
 func isValidFileType(file []byte) bool {
 	fileType := http.DetectContentType(file)
 	return fileType == "audio/mpeg"
+}
+func bookExists(id int) bool {
+	name, author, series, filename, isbn, coverUrl, bkId := books.GetBook(id)
+
+	if name == "" && author == "" && series == "" && filename == "" && isbn == "" && coverUrl == "" && bkId == "" {
+		log.Error("Book does not exist")
+		return false
+	} else {
+		return true
+	}
 }

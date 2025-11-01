@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/static/css/listen.css">
     <script src="/static/js/listen.js" defer></script>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=cog,headphones,home,logout,menu,search,upload" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=cog,delete,headphones,home,logout,menu,more_horiz,search,upload" />
     <script src="/static/js/index.js" defer></script>
     <script>
         const id = document.getElementById("id").content;
@@ -53,6 +53,14 @@
     </nav>
     <main>
         <div id="content">
+            <div id="toolbar-options" onclick="handleMoreClick()">
+                <span class="material-symbols-rounded animation-grow">more_horiz</span>
+            </div>
+            <div id="toolbar-options-div" style="opacity: 0;">
+                <ul>
+                    <li class="animation-grow" onclick="deleteThisBook()"><span class="material-symbols-rounded">delete</span>Delete</li>
+                </ul>
+            </div>
             <img src="{{.CoverUrl}}" alt="">
             <hgroup style="text-align: center;">
                 <h1 id="title">{{.Series}}: {{.Name}}</h1>
