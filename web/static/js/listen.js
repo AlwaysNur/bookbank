@@ -23,6 +23,24 @@ audio.addEventListener('loadedmetadata', () => {
 
 audio.addEventListener('error', () => {
     console.error('Audio error', audio.error);
+  try {
+    const saved = localStorage.getItem(`bookbankPlaybackLocation-${id}`);
+    if (!saved) return;
+    const pos = parseFloat(saved);
+    if (!Number.isNaN(pos) && pos >= 0 && pos < audio.duration) {
+      audio.currentTime = pos;
+    } else {
+      // invalid/out-of-range saved position — clear it
+      localStorage.removeItem(`bookbankPlaybackLocation-${id}`);
+    }
+  } catch (err) {
+    console.error('Error restoring playback position', err);
+    localStorage.removeItem(`bookbankPlaybackLocation-${id}`);
+  }
+}, { once: true });
+
+audio.addEventListener('error', () => {
+  console.error('Audio error', audio.error);
 });
 
 function handleMoreClick() {
