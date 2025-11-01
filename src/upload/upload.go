@@ -115,8 +115,8 @@ func DeleteHandler(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Fprintf(w, "Deleting of book: %d\n", id)
 	books.DeleteBook(id - 1)
-
-	http.Redirect(w, r, "/library", http.StatusFound)
+	os.Remove(fmt.Sprintf("store/%v.mp3", id))
+	fmt.Fprint(w, "Deleted Successfully!")
 }
 func createFile(filename string) (*os.File, error) {
 	if _, err := os.Stat("store"); os.IsNotExist(err) {

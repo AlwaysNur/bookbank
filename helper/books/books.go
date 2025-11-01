@@ -140,7 +140,6 @@ func DeleteBook(entry int) {
 		log.Fatal("Invalid book entry format")
 	}
 
-	// Change the book's name
 	book["name"] = ""
 	book["author"] = ""
 	book["file"] = ""
@@ -155,7 +154,7 @@ func DeleteBook(entry int) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(string(output))
+	log.Info(fmt.Sprintf("Successfully Deleted Book Number %v", entry+1))
 	// write back to file
 	if err := os.WriteFile(filePath, output, 0644); err != nil {
 		log.Error(err)

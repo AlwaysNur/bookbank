@@ -53,12 +53,12 @@
     </nav>
     <main>
         <div id="content">
-            <div id="toolbar-options" style="text-align: right;width: 100%;cursor: pointer;" onclick="handleMoreClick()">
-                <span class="material-symbols-rounded">more_horiz</span>
+            <div id="toolbar-options" onclick="handleMoreClick()">
+                <span class="material-symbols-rounded animation-grow">more_horiz</span>
             </div>
-            <div id="toolbar-options-div" style="display: none;">
+            <div id="toolbar-options-div" style="opacity: 0;">
                 <ul>
-                    <li><span class="material-symbols-rounded">delete</span>Delete</li>
+                    <li class="animation-grow" onclick="deleteThisBook()"><span class="material-symbols-rounded">delete</span>Delete</li>
                 </ul>
             </div>
             <img src="{{.CoverUrl}}" alt="">
