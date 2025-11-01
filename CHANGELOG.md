@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/AlwaysNur/bookbank/compare/v1.5.0...v1.6.0) (2025-11-01)
+
+
+### Features
+
+* **book:** delete book action ([#76](https://github.com/AlwaysNur/bookbank/issues/76)) ([5750f22](https://github.com/AlwaysNur/bookbank/commit/5750f22644dd92056bb0c7206aea34b2ab76801d))
+
 ## [1.5.0](https://github.com/AlwaysNur/bookbank/compare/v1.4.1...v1.5.0) (2025-10-28)
 
 
