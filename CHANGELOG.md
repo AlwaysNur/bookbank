@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/AlwaysNur/bookbank/compare/v1.6.0...v1.6.1) (2025-11-04)
+
+
+### Bug Fixes
+
+* **navbar:** fixed navbar ([#78](https://github.com/AlwaysNur/bookbank/issues/78)) ([01b1576](https://github.com/AlwaysNur/bookbank/commit/01b15764e3331bb788446aaf8f94f34bf76145db))
+
 ## [1.6.0](https://github.com/AlwaysNur/bookbank/compare/v1.5.0...v1.6.0) (2025-11-01)
 
 
