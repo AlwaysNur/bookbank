@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/AlwaysNur/bookbank/compare/v1.6.1...v1.7.0) (2025-11-21)
+
+
+### Features
+
+* small field required icon ([#80](https://github.com/AlwaysNur/bookbank/issues/80)) ([056b3eb](https://github.com/AlwaysNur/bookbank/commit/056b3eb0cbfb29e8324238eae748ebebfeb53d45))
+
 ## [1.6.1](https://github.com/AlwaysNur/bookbank/compare/v1.6.0...v1.6.1) (2025-11-04)
 
 
