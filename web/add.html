@@ -12,11 +12,11 @@
 <body>
     <form enctype="multipart/form-data" action="/api/add" method="POST">
         <div>
-            <span>Title</span>
+            <span class="required" title="required">Title</span>
             <input type="text" name="name" placeholder="Title..." required style="width: 90%;">
         </div>
         <div>
-            <span>Author</span>
+            <span class="required" title="required">Author</span>
             <input type="text" name="author" placeholder="Author..." required style="width: 70%;">
         </div>
         <div>
@@ -27,10 +27,10 @@
             <input type="text" name="isbn" placeholder="ISBN...">
         </div>
         <div>
-            <span>Mp3 source file</span>
+            <span class="required" title="required">Mp3 source file</span>
             <input type="file" name="myFile" accept=".mp3" placeholder="Mp3 file" required>
         </div>
-        <button type="submit">Upload</button>
+        <button type="submit">Upload</button><br>
     </form>
 
 </body>
