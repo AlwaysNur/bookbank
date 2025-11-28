@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.7.2](https://github.com/AlwaysNur/bookbank/compare/v1.7.0...v1.7.2) (2025-11-28)
+
+
+### Bug Fixes
+
+* **listen page:** navbar h2 font weight ([#84](https://github.com/AlwaysNur/bookbank/issues/84)) ([bd97f97](https://github.com/AlwaysNur/bookbank/commit/bd97f9785ad64105a07f300687b9eb38114b3bc8))
+* **listen-page:** do not insert new line after full stop ([#82](https://github.com/AlwaysNur/bookbank/issues/82)) ([8618ba0](https://github.com/AlwaysNur/bookbank/commit/8618ba013caf8d903fcdde108cc7ef032c759594))
+
+
+### Miscellaneous Chores
+
+* release 1.7.2 ([#85](https://github.com/AlwaysNur/bookbank/issues/85)) ([c6419ee](https://github.com/AlwaysNur/bookbank/commit/c6419eefcf25c936afe0e7136199cfdd20d7a12a))
+
 ## [1.7.0](https://github.com/AlwaysNur/bookbank/compare/v1.6.1...v1.7.0) (2025-11-21)
 
 
