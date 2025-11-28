@@ -68,7 +68,7 @@
     font-weight: 400;
 }
 
-h2 {
+h2:not(:first-child) {
     font-weight: 400;
     font-size: 11.3;
 }
