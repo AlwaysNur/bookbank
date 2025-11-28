@@ -3,7 +3,6 @@ const descElement = document.querySelector(".description")
 const savedPosition = localStorage.getItem(`bookbankPlaybackLocation-${id}`);
 const toolbarOptions = document.getElementById("toolbar-options")
 const toolBarDiv = document.getElementById("toolbar-options-div")
-descElement.innerHTML = descElement.innerHTML.replaceAll(".", ".<br>").replaceAll("!", "!<br>")
 audio.addEventListener('loadedmetadata', () => {
     try {
         const saved = localStorage.getItem(`bookbankPlaybackLocation-${id}`);
