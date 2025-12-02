@@ -22,3 +22,9 @@ form {
     padding: 20px;
     width: 50%;
 }
+
+span.required::after {
+    content: " *";
+    color: var(--red);
+    font-size: 13pt;
+}

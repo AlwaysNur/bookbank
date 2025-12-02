@@ -20,6 +20,7 @@ func main() {
 	// api routes
 	http.HandleFunc("/api/add", upload.UploadHandler)
 	http.HandleFunc("/api/version", web.HandleVersion)
+	http.HandleFunc("/api/delete/", upload.DeleteHandler)
 	// static html routes
 	http.HandleFunc("/new", web.HandleAdd)
 	http.HandleFunc("/listen", web.HandleListenPage)

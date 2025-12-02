@@ -19,6 +19,7 @@ type JsonBook struct {
 	Isbn     string `json:"isbn"`
 	CoverUrl string `json:"coverUrl"`
 	Id       string `json:"id"`
+	Deleted  string `json:"deleted"`
 }
 
 type BooksData struct {
@@ -36,7 +37,7 @@ type Book struct {
 
 func check(err any) {
 	if err != nil {
-		log.Fatal(err)
+		log.Error(err)
 	}
 }
 
@@ -51,6 +52,7 @@ func AddEntry(name string, author string, series string, filename string, isbn s
 		Isbn:     isbn,
 		CoverUrl: isbnlib.GetCoverUrlByIsbn(isbn),
 		Id:       strings.ReplaceAll(filename, ".mp3", ""),
+		Deleted:  "block",
 	}
 	// read JSON file
 	filePath := "helper/books.json"
@@ -61,7 +63,7 @@ func AddEntry(name string, author string, series string, filename string, isbn s
 	var data BooksData
 	decoder := json.NewDecoder(file)
 	if err := decoder.Decode(&data); err != nil {
-		panic(err)
+		log.Error(err)
 	}
 
 	// add the new book to the array
@@ -70,12 +72,12 @@ func AddEntry(name string, author string, series string, filename string, isbn s
 	// marshal back to JSON
 	updatedJson, err := json.MarshalIndent(data, "", "    ")
 	if err != nil {
-		panic(err)
+		log.Error(err)
 	}
 
 	// write back to file
 	if err := os.WriteFile(filePath, updatedJson, 0644); err != nil {
-		panic(err)
+		log.Error(err)
 	}
 
 	log.Info("Created new book entry " + name)
@@ -110,4 +112,51 @@ func GetBooks(filename string) ([]JsonBook, error) {
 	}
 
 	return data.Books, nil
+}
+
+func DeleteBook(entry int) {
+	filePath := "helper/books.json"
+	file, err := os.ReadFile(filePath)
+	check(err)
+
+	var jsonMap map[string]any
+	if err := json.Unmarshal(file, &jsonMap); err != nil {
+		log.Fatal(err)
+	}
+
+	books, ok := jsonMap["books"].([]any)
+	if !ok {
+		log.Fatal("Invalid format for books array")
+	}
+
+	// Check if the entry index is within range
+	if entry < 0 || entry >= len(books) {
+		log.Fatal(fmt.Sprintf("Entry index %d out of range", entry))
+	}
+
+	// Assert the specific book as a map to modify
+	book, ok := books[entry].(map[string]any)
+	if !ok {
+		log.Fatal("Invalid book entry format")
+	}
+
+	book["name"] = ""
+	book["author"] = ""
+	book["file"] = ""
+	book["isbn"] = ""
+	book["series"] = ""
+	book["coverUrl"] = ""
+	book["deleted"] = "none"
+	book["id"] = ""
+
+	// Marshal and output the updated JSON
+	output, err := json.MarshalIndent(jsonMap, "", "  ")
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Info(fmt.Sprintf("Successfully Deleted Book Number %v", entry+1))
+	// write back to file
+	if err := os.WriteFile(filePath, output, 0644); err != nil {
+		log.Error(err)
+	}
 }

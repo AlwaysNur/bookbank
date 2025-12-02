@@ -21,7 +21,7 @@ nav.sidebar {
 
 .floating-navbar {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
@@ -207,6 +207,12 @@ nav span:not(.material-symbols-rounded) {
 }
 
 /* ----breakpoints---- */
+
+@media screen and (min-width: 956px) {
+    #toolbar-options-div {
+        width: calc(100dvw - 250px - 10px) !important;
+    }
+}
 
 @media screen and (max-width: 954px) {
     body {
