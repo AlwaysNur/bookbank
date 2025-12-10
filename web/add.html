@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/base.css">
     <link rel="stylesheet" href="/static/css/new.css">
+    <script src="/static/js/add.js" defer></script>
     <title>Add New</title>
 </head>
 
@@ -13,7 +14,12 @@
     <form enctype="multipart/form-data" action="/api/add" method="POST">
         <div>
             <span class="required" title="required">Title</span>
-            <input type="text" name="name" placeholder="Title..." required style="width: 90%;">
+            <div class="autocomplete" style="width: 90%;">
+                <input id="title-input" type="text" name="name" placeholder="Title..." required
+                    oninput="onTitleInput(event)" autocomplete="off">
+                <div id="title-suggestions" class="suggestions" hidden></div>
+
+            </div>
         </div>
         <div>
             <span class="required" title="required">Author</span>
@@ -33,6 +39,7 @@
         <button type="submit">Upload</button><br>
     </form>
 
+    </form>
 </body>
 
 </html>
