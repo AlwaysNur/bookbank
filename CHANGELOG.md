@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/AlwaysNur/bookbank/compare/v1.7.2...v1.8.0) (2025-12-10)
+
+
+### Features
+
+* **add-new-page:** show book info suggestions ([#86](https://github.com/AlwaysNur/bookbank/issues/86)) ([6026f64](https://github.com/AlwaysNur/bookbank/commit/6026f6453ea7c5e1e389ec3b0f31042159a9e2cd))
+
 ## [1.7.2](https://github.com/AlwaysNur/bookbank/compare/v1.7.0...v1.7.2) (2025-11-28)
 
 
