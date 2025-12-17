@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/AlwaysNur/bookbank/compare/v1.8.0...v1.8.1) (2025-12-17)
+
+
+### Bug Fixes
+
+* **delete-book:** add confirmation prompt to stop users from accidentally deleting books ([#88](https://github.com/AlwaysNur/bookbank/issues/88)) ([34a3a41](https://github.com/AlwaysNur/bookbank/commit/34a3a410ef2aa4bf11785144d650d12b94efa817))
+
 ## [1.8.0](https://github.com/AlwaysNur/bookbank/compare/v1.7.2...v1.8.0) (2025-12-10)
 
 
