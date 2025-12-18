@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.2](https://github.com/AlwaysNur/bookbank/compare/v1.8.1...v1.8.2) (2025-12-18)
+
+
+### Bug Fixes
+
+* **layout:** add bottom padding in cards grid ([#90](https://github.com/AlwaysNur/bookbank/issues/90)) ([2677bd1](https://github.com/AlwaysNur/bookbank/commit/2677bd133e8ebfc9c38a6b1f982c102f8a1208f9))
+
 ## [1.8.1](https://github.com/AlwaysNur/bookbank/compare/v1.8.0...v1.8.1) (2025-12-17)
 
 
