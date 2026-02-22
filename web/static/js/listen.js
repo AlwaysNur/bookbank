@@ -52,6 +52,9 @@ function handleMoreClick() {
     }
 }
 async function deleteThisBook() {
+    if (prompt("Type \"DELETE\" to confirm deletion of this book:") !== "DELETE") {
+        return;
+    }
     await fetch('/api/delete/' + id, {
         method: 'DELETE',
     });

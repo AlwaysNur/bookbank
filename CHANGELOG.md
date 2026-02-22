@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.8.2](https://github.com/AlwaysNur/bookbank/compare/v1.8.1...v1.8.2) (2025-12-18)
+
+
+### Bug Fixes
+
+* **layout:** add bottom padding in cards grid ([#90](https://github.com/AlwaysNur/bookbank/issues/90)) ([2677bd1](https://github.com/AlwaysNur/bookbank/commit/2677bd133e8ebfc9c38a6b1f982c102f8a1208f9))
+
+## [1.8.1](https://github.com/AlwaysNur/bookbank/compare/v1.8.0...v1.8.1) (2025-12-17)
+
+
+### Bug Fixes
+
+* **delete-book:** add confirmation prompt to stop users from accidentally deleting books ([#88](https://github.com/AlwaysNur/bookbank/issues/88)) ([34a3a41](https://github.com/AlwaysNur/bookbank/commit/34a3a410ef2aa4bf11785144d650d12b94efa817))
+
+## [1.8.0](https://github.com/AlwaysNur/bookbank/compare/v1.7.2...v1.8.0) (2025-12-10)
+
+
+### Features
+
+* **add-new-page:** show book info suggestions ([#86](https://github.com/AlwaysNur/bookbank/issues/86)) ([6026f64](https://github.com/AlwaysNur/bookbank/commit/6026f6453ea7c5e1e389ec3b0f31042159a9e2cd))
+
 ## [1.7.2](https://github.com/AlwaysNur/bookbank/compare/v1.7.0...v1.7.2) (2025-11-28)
 
 
