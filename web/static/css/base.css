@@ -47,6 +47,10 @@ form {
     color: var(--text);
 }
 
+@view-transition {
+    navigation: auto;
+}
+
 /* catppuccin-latte, catppuccin-mocha.
 Thanks to Catppuccin (catppuccin.com) <3.
 */
