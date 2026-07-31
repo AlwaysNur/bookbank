@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/AlwaysNur/bookbank/compare/v1.8.2...v1.9.0) (2026-07-31)
+
+
+### Features
+
+* **ux:** add view transitions for better ux ([#93](https://github.com/AlwaysNur/bookbank/issues/93)) ([70404fb](https://github.com/AlwaysNur/bookbank/commit/70404fb0f97429f75ad58131f7be52fbcc0017ed))
+
 ## [1.8.2](https://github.com/AlwaysNur/bookbank/compare/v1.8.1...v1.8.2) (2025-12-18)
 
 
