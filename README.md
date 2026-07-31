@@ -8,7 +8,7 @@
 - Easy to use interface
 - Free forever
 
-### Install
+### 💾 Install
 
 #### With Docker CLI:
 
