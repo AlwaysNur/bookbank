@@ -1,0 +1,51 @@
+main {
+    overflow: scroll;
+}
+
+.content {
+    height: 80vh;
+    overflow: scroll;
+}
+
+a {
+    color: var(--blue);
+}
+
+h2:not(:first-child) {
+    background-color: var(--pink);
+    width: max-content;
+    padding: 5px;
+    color: var(--base);
+    border-radius: 10px;
+    font-size: 9pt;
+    position: relative;
+
+    a {
+        color: var(--crust);
+        text-decoration: underline;
+    }
+}
+
+h3 {
+    font-size: 12pt;
+}
+
+h2.inline {
+    display: inline-block;
+    margin: auto 8px;
+}
+
+h2:nth-child(2)::after {
+    background-color: var(--green);
+    display: inline;
+    content: "latest";
+    width: max-content;
+    padding: 5px;
+    color: var(--base);
+    border-radius: 10px;
+    font-size: 9pt;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    margin-left: 10px;
+}
